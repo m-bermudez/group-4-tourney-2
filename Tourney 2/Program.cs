@@ -13,9 +13,9 @@ class Program
         library.AddBook(new Book("Analytics in Action", "Nathan Brooks", "ISBN333", 6));
 
         // Add patrons
-        library.AddPatron(new Student { Name = "Akhil", Email = "akhil@usf.edu", ID = "S001", Major = "Business Analytics", GraduationYear = 2026 });
-        library.AddPatron(new Student { Name = "Sandeep", Email = "sandeep@usf.edu", ID = "S002", Major = "Information Systems", GraduationYear = 2025 });
-        library.AddPatron(new Staff { Name = "Grandon Gill", Email = "grandon@usf.edu", ID = "ST001", Position = "Librarian", Department = "Library Services" });
+        library.AddPatron(new Student { name = "Akhil", email = "akhil@usf.edu", id = "S001", major = "Business Analytics", gradYear = 2026 });
+        library.AddPatron(new Student { name = "Sandeep", email = "sandeep@usf.edu", id = "S002", major = "Information Systems", gradYear = 2025 });
+        library.AddPatron(new Staff { name = "Grandon Gill", email = "grandon@usf.edu", id = "ST001", position = "Librarian", department = "Library Services" });
 
         // Borrow books
         library.BorrowBook("ISBN222"); // Sandeep borrows "Business Insights with AI"

@@ -8,11 +8,11 @@ namespace Tourney_2
 {
     public class Person
     {
-        protected string _name;
-        protected string _email;
-        protected int _id;
+        public string _name {get; set;}
+        public string _email {get; set;}
+        public string _id {get; set;}
 
-        public Person(string name, string email, int id)
+        public Person(string name, string email, string id)
         {
             _name = name;
             _email = email;

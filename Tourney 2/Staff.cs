@@ -4,14 +4,14 @@ namespace Tourney_2
 {
 public class Staff : Person
     {
-        private string _name;
-        private string _email;
-        private int _id;
+        public string _name;
+        public string _email;
+        public string _id;
 
-        private string _position;
-        private string _department;
+        public string _position {get; set;}
+        public string _department {get; set;}
 
-        public Staff(string name, string email, int id, string position, string department) : base(name, email, id)
+        public Staff(string name, string email,  id, string position, string department) : base(name, email, id)
         {
             _position = position;
             _department = department;

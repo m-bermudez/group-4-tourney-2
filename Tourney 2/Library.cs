@@ -19,18 +19,15 @@ namespace Tourney_2
         public void AddBook(Book book)
         {
             books.Add(book);
-            Console.WriteLine($"Book added: {book.Title} by {book.Author}");
         }
 
         public void AddPatron(Person patron)
         {
             patrons.Add(patron);
-            Console.WriteLine($"Patron added: {patron._name}");
         }
 
         public void DisplayBooks()
         {
-            Console.WriteLine("Books in Library:");
             foreach (var book in books)
             {
                 Console.WriteLine($"Title: {book.Title}, Author: {book.Author}, ISBN: {book.ISBN}, Available Copies: {book.AvailableCopies}");
@@ -39,38 +36,23 @@ namespace Tourney_2
 
         public void DisplayPatrons()
         {
-            Console.WriteLine("Patrons in Library:");
             foreach (var patron in patrons)
             {
-                Console.WriteLine($"Name: {patron._name}, Email: {patron._email}, ID: {patron._id}");
+                Console.WriteLine($"Name: {patron.Name}, Email: {patron.Email}, ID: {patron.ID}");
             }
         }
 
-        public void BorrowBook(string isbn, Person patron)
+        public void BorrowBook(Person patron, string isbn)
         {
             Book book = books.Find(b => b.ISBN == isbn);
             if (book != null && book.AvailableCopies > 0)
             {
                 book.AvailableCopies--;
-                Console.WriteLine($"{patron._name} borrowed {book.Title}");
+                Console.WriteLine($"{patron.Name} borrowed {book.Title}");
             }
             else
             {
                 Console.WriteLine("Book not available.");
-            }
-        }
-
-        public void ReturnBook(string isbn, Person patron)
-        {
-            Book book = books.Find(b => b.ISBN == isbn);
-            if (book != null)
-            {
-                book.AvailableCopies++;
-                Console.WriteLine($"{patron._name} returned {book.Title}");
-            }
-            else
-            {
-                Console.WriteLine("Invalid book ISBN.");
             }
         }
     }
